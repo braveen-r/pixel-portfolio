@@ -61,28 +61,34 @@ export const AboutSection: React.FC = () => {
             </div>
 
             {/* Guild & Specs Table */}
-            <div className="p-3 bg-[#EFE3C8]/80 border-2 border-[#8B5E3C] space-y-2 text-xs font-mono mb-5">
-              <div className="flex justify-between border-b border-[#D0B8A8] pb-1">
-                <span className="font-bold text-[#8B5E3C]">Current Role:</span>
-                <span className="text-[#3C2A21] font-semibold">BCA Student &amp; Frontend Developer</span>
-              </div>
-              <div className="flex justify-between border-b border-[#D0B8A8] pb-1">
-                <span className="font-bold text-[#8B5E3C]">Core Stack:</span>
-                <span className="text-[#3C2A21] font-semibold">React, Python, Tailwind, Docker, Arch Linux</span>
-              </div>
-              <div className="flex justify-between border-b border-[#D0B8A8] pb-1">
-                <span className="font-bold text-[#8B5E3C]">Education Quest:</span>
-                <span className="text-[#3C2A21] font-semibold">Final Year BCA (Ongoing)</span>
-              </div>
-              <div className="flex justify-between border-b border-[#D0B8A8] pb-1">
-                <span className="font-bold text-[#8B5E3C]">Specialty:</span>
-                <span className="text-[#3C2A21] font-semibold">System Ricing &amp; Cloud Automation</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="font-bold text-[#8B5E3C]">Status:</span>
-                <span className="text-[#708238] font-bold">ACTIVELY SEEKING INTERNSHIPS</span>
-              </div>
-            </div>
+            <div className="border-2 border-[#8B5E3C] p-3 sm:p-5 bg-[#EFE3C8] font-mono text-[10px] sm:text-xs">
+  
+  <div className="grid grid-cols-[115px_1fr] sm:grid-cols-[140px_1fr] gap-2 border-b border-[#8B5E3C]/30 pb-2 mb-2">
+    <span className="text-[#A67B5B] font-bold">Current Role:</span>
+    <span className="text-[#3C2A21] font-bold">BCA Student & Frontend Developer</span>
+  </div>
+  
+  <div className="grid grid-cols-[115px_1fr] sm:grid-cols-[140px_1fr] gap-2 border-b border-[#8B5E3C]/30 pb-2 mb-2">
+    <span className="text-[#A67B5B] font-bold">Core Stack:</span>
+    <span className="text-[#3C2A21]">React, Python, Tailwind, Docker, Arch Linux</span>
+  </div>
+  
+  <div className="grid grid-cols-[115px_1fr] sm:grid-cols-[140px_1fr] gap-2 border-b border-[#8B5E3C]/30 pb-2 mb-2">
+    <span className="text-[#A67B5B] font-bold">Education Quest:</span>
+    <span className="text-[#3C2A21]">Final Year BCA (Ongoing)</span>
+  </div>
+  
+  <div className="grid grid-cols-[115px_1fr] sm:grid-cols-[140px_1fr] gap-2 border-b border-[#8B5E3C]/30 pb-2 mb-2">
+    <span className="text-[#A67B5B] font-bold">Specialty:</span>
+    <span className="text-[#3C2A21]">System Ricing & Cloud Automation</span>
+  </div>
+  
+  <div className="grid grid-cols-[115px_1fr] sm:grid-cols-[140px_1fr] gap-2 pt-1">
+    <span className="text-[#A67B5B] font-bold">Status:</span>
+    <span className="text-[#708238] font-bold uppercase">ACTIVELY SEEKING INTERNSHIPS</span>
+  </div>
+
+</div>
 
             {/* Equipment / Loadout */}
             <div>
