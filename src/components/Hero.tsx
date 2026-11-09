@@ -8,14 +8,11 @@ import {
   Sword,
   Sparkles,
   Mail,
-  ArrowRight,
-  Shield,
   Heart,
   Zap,
   Terminal,
   MapPin,
   Flame,
-  CheckCircle2,
 } from 'lucide-react';
 
 interface HeroProps {
@@ -26,8 +23,9 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ gameMode, onModeChange, onNavigate }) => {
   const [dialogText, setDialogText] = useState('');
-  const fullText =
-    "Greetings! I'm Aswin AK — a Full Stack Developer specializing in the MERN stack. I build scalable applications with clean architecture, real-time WebSockets, and seamless user experiences.";
+  
+  // Dynamically pulling your name and details!
+  const fullText = `Greetings! I'm ${PERSONAL_INFO.fullName} — a Frontend Developer & Cloud Automator. I build fast, interactive web applications and heavily customized system environments.`;
 
   // Retro Typewriter Dialogue Effect
   useEffect(() => {
@@ -42,7 +40,7 @@ export const Hero: React.FC<HeroProps> = ({ gameMode, onModeChange, onNavigate }
       }
     }, 25);
     return () => clearInterval(timer);
-  }, []);
+  }, [fullText]);
 
   const handleTakeControl = () => {
     sound.playClick();
@@ -80,10 +78,10 @@ export const Hero: React.FC<HeroProps> = ({ gameMode, onModeChange, onNavigate }
           </div>
         </div>
 
-        {/* Location / Status */}
+        {/* Location / Status (Syntax error fixed here!) */}
         <div className="flex items-center gap-2 font-silkscreen text-[11px] text-[#8B5E3C]">
           <MapPin className="w-3.5 h-3.5 text-[#8B5E3C]" />
-          <span>{PERSONAL_INFO.location} • READY FOR QUESTS</span>
+          <span>{PERSONAL_INFO.location}</span>
         </div>
       </div>
 
@@ -94,7 +92,7 @@ export const Hero: React.FC<HeroProps> = ({ gameMode, onModeChange, onNavigate }
           {/* Left Column: Pixel Avatar & Profile Controls */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center text-center">
             
-            {/* Custom Pixel Profile Avatar (Based on User's Sitting Photo) */}
+            {/* Custom Pixel Profile Avatar */}
             <div className="mb-4">
               <PixelProfileAvatar size="lg" />
             </div>
@@ -102,7 +100,7 @@ export const Hero: React.FC<HeroProps> = ({ gameMode, onModeChange, onNavigate }
             {/* Status Pill */}
             <div className="font-silkscreen text-[10px] text-[#3C2A21] mb-3 flex items-center justify-center gap-1.5 px-3 py-1 bg-[#EFE3C8]/90 border-2 border-[#8B5E3C]">
               <span className="w-2 h-2 rounded-full bg-[#708238] animate-ping" />
-              <span>ACTIVE IN PRODUCTION • 1+ YRS EXP</span>
+              <span>ACTIVELY SEEKING INTERNSHIPS</span>
             </div>
 
             {/* Quick Game Mode Switcher Button */}
@@ -127,18 +125,18 @@ export const Hero: React.FC<HeroProps> = ({ gameMode, onModeChange, onNavigate }
               </div>
 
               <h1 className="font-pixel text-2xl sm:text-3xl lg:text-4xl text-[#1E120B] leading-snug tracking-tight mb-1.5">
-                HI, I'M <span className="text-[#A67B5B]">{PERSONAL_INFO.name}</span>
+                HI, I'M <span className="text-[#A67B5B]">{PERSONAL_INFO.name.toUpperCase()}</span>
               </h1>
 
               <p className="font-silkscreen text-sm sm:text-base text-[#8B5E3C] font-semibold">
-                FULL STACK DEVELOPER • MERN STACK • REAL-TIME APPS
+                FRONTEND DEVELOPER • SYSTEM RICING • CLOUD AUTOMATION
               </p>
             </div>
 
             {/* 8-Bit RPG Dialogue Box with Typing Effect */}
             <div className="relative bg-[#F7EFE5]/85 border-3 border-[#3C2A21] p-4 shadow-[4px_4px_0px_#3C2A21]">
               <div className="absolute -top-3 left-4 bg-[#8B5E3C] text-white px-2 py-0.5 font-pixel text-[9px] border border-[#3C2A21]">
-                MESSAGE FROM ASWIN
+                MESSAGE FROM {PERSONAL_INFO.name.toUpperCase()}
               </div>
               <p className="font-retro text-xl sm:text-2xl text-[#3C2A21] leading-relaxed min-h-[60px] select-text">
                 &ldquo;{dialogText}&rdquo;
@@ -166,20 +164,20 @@ export const Hero: React.FC<HeroProps> = ({ gameMode, onModeChange, onNavigate }
             {/* Quick Stat Tags */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
               <div className="p-2 bg-[#EFE3C8]/85 border-2 border-[#8B5E3C] text-center">
-                <div className="font-pixel text-base text-[#A04747]">1+ YR</div>
-                <div className="font-silkscreen text-[9px] text-[#3C2A21]">INDUSTRY XP</div>
+                <div className="font-pixel text-base text-[#A04747]">{PERSONAL_INFO.experienceYears} YR</div>
+                <div className="font-silkscreen text-[9px] text-[#3C2A21]">DEV EXP</div>
               </div>
               <div className="p-2 bg-[#EFE3C8]/85 border-2 border-[#8B5E3C] text-center">
-                <div className="font-pixel text-base text-[#708238]">4+</div>
-                <div className="font-silkscreen text-[9px] text-[#3C2A21]">CORE PRODUCTION APPS</div>
+                <div className="font-pixel text-base text-[#708238]">11+</div>
+                <div className="font-silkscreen text-[9px] text-[#3C2A21]">ACTIVE REPOS</div>
               </div>
               <div className="p-2 bg-[#EFE3C8]/85 border-2 border-[#8B5E3C] text-center">
                 <div className="font-pixel text-base text-[#E0A96D]">100%</div>
-                <div className="font-silkscreen text-[9px] text-[#3C2A21]">CLEAN ARCHITECTURE</div>
+                <div className="font-silkscreen text-[9px] text-[#3C2A21]">SYSTEM RICING</div>
               </div>
               <div className="p-2 bg-[#EFE3C8]/85 border-2 border-[#8B5E3C] text-center">
-                <div className="font-pixel text-base text-[#8B5E3C]">⚡ REAL-TIME</div>
-                <div className="font-silkscreen text-[9px] text-[#3C2A21]">SOCKET.IO &amp; AWS</div>
+                <div className="font-pixel text-base text-[#8B5E3C]">BLAZING</div>
+                <div className="font-silkscreen text-[9px] text-[#3C2A21]">ARCH LINUX ENV</div>
               </div>
             </div>
 

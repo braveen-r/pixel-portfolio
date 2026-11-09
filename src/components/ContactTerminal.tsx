@@ -2,16 +2,7 @@ import React, { useState } from 'react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { sound } from '../utils/audio';
 import {
-  Mail,
-  Send,
-  Terminal,
-  Copy,
-  Check,
-  Github,
-  Linkedin,
-  Sparkles,
-  MessageSquare,
-  Key,
+  Mail, Send, Terminal, Copy, Check, Github, Linkedin, MessageSquare,
 } from 'lucide-react';
 
 interface ContactTerminalProps {
@@ -22,6 +13,8 @@ export const ContactTerminal: React.FC<ContactTerminalProps> = ({ onApplyCheatCo
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [copied, setCopied] = useState(false);
   const [sentStatus, setSentStatus] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
   const [cheatInput, setCheatInput] = useState('');
   const [cheatFeedback, setCheatFeedback] = useState<string | null>(null);
 
@@ -32,14 +25,46 @@ export const ContactTerminal: React.FC<ContactTerminalProps> = ({ onApplyCheatCo
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
-    sound.playLevelUp();
-    setSentStatus('QUEST TRANSMISSION RECEIVED! ASWIN WILL CONTACT YOU SOON.');
-    setFormData({ name: '', email: '', message: '' });
-    setTimeout(() => setSentStatus(null), 6000);
+    setIsSubmitting(true);
+    sound.playClick();
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "1ad46911-8cf5-4c87-94ca-762eb65a0827", // <-- PASTE YOUR KEY HERE
+          subject: `New Quest Log from ${formData.name} via Portfolio`,
+          from_name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        sound.playLevelUp();
+        setSentStatus(`QUEST TRANSMISSION SUCCESSFUL! I WILL RESPOND SHORTLY.`);
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        sound.playGameOver();
+        setSentStatus(`TRANSMISSION FAILED. PLEASE USE DIRECT EMAIL.`);
+      }
+    } catch (error) {
+      sound.playGameOver();
+      setSentStatus(`NETWORK ERROR. PLEASE USE DIRECT EMAIL.`);
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setSentStatus(null), 6000);
+    }
   };
 
   const handleCheatSubmit = (e: React.FormEvent) => {
@@ -67,25 +92,21 @@ export const ContactTerminal: React.FC<ContactTerminalProps> = ({ onApplyCheatCo
 
   return (
     <section id="contact" className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      
-      {/* Section Header */}
       <div className="flex items-center gap-3 mb-6">
         <div className="p-2 bg-[#E0A96D] text-[#1E120B] border-2 border-[#3C2A21] shadow-[2px_2px_0px_#3C2A21]">
           <Mail className="w-5 h-5" />
         </div>
         <div>
           <h2 className="font-pixel text-lg sm:text-xl text-[#1E120B]">
-            GUILD TAVERN &amp; TRANSMISSION
+            GUILD TAVERN & TRANSMISSION
           </h2>
           <p className="font-silkscreen text-xs text-[#8B5E3C]">
-            [DISPATCH QUEST CONTRACTS OR SEND MESSAGES TO ASWIN]
+            [DISPATCH QUEST CONTRACTS OR SEND MESSAGES TO {PERSONAL_INFO.name.toUpperCase()}]
           </p>
         </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        
-        {/* Left: Message Dispatch Form */}
         <div className="lg:col-span-7">
           <div className="pixel-card p-6 bg-[#DFD3C3]/95 shadow-[4px_4px_0px_#3C2A21]">
             <div className="border-b-2 border-[#8B5E3C] pb-2 mb-4 flex items-center justify-between">
@@ -98,7 +119,7 @@ export const ContactTerminal: React.FC<ContactTerminalProps> = ({ onApplyCheatCo
             </div>
 
             {sentStatus && (
-              <div className="mb-4 p-3 bg-[#708238] text-white border-2 border-[#3C2A21] font-pixel text-[10px] animate-pulse">
+              <div className={`mb-4 p-3 border-2 border-[#3C2A21] font-pixel text-[10px] animate-pulse ${sentStatus.includes('FAILED') || sentStatus.includes('ERROR') ? 'bg-[#A04747] text-white' : 'bg-[#708238] text-white'}`}>
                 {sentStatus}
               </div>
             )}
@@ -149,19 +170,17 @@ export const ContactTerminal: React.FC<ContactTerminalProps> = ({ onApplyCheatCo
               <button
                 type="submit"
                 id="submit-contact-form-btn"
-                className="pixel-btn pixel-btn-primary w-full py-3 text-xs flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className={`pixel-btn pixel-btn-primary w-full py-3 text-xs flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-75 cursor-wait' : ''}`}
               >
-                <Send className="w-4 h-4" />
-                DISPATCH QUEST SCROLL
+                <Send className={`w-4 h-4 ${isSubmitting ? 'animate-bounce' : ''}`} />
+                {isSubmitting ? 'TRANSMITTING...' : 'DISPATCH QUEST SCROLL'}
               </button>
             </form>
           </div>
         </div>
 
-        {/* Right: Direct Channels & Retro Easter Egg Console */}
         <div className="lg:col-span-5 space-y-6">
-          
-          {/* Direct Guild Contact Card */}
           <div className="pixel-card p-6 bg-[#EFE3C8]/95 shadow-[4px_4px_0px_#3C2A21]">
             <div className="border-b-2 border-[#8B5E3C] pb-2 mb-3">
               <span className="font-pixel text-xs text-[#3C2A21]">
@@ -170,7 +189,6 @@ export const ContactTerminal: React.FC<ContactTerminalProps> = ({ onApplyCheatCo
             </div>
 
             <div className="space-y-3">
-              {/* Email 1-Click Copy */}
               <div className="p-3 bg-[#F7EFE5] border-2 border-[#3C2A21]">
                 <div className="font-pixel text-[9px] text-[#8B5E3C] mb-1">
                   OFFICIAL EMAIL INBOX:
@@ -191,7 +209,6 @@ export const ContactTerminal: React.FC<ContactTerminalProps> = ({ onApplyCheatCo
                 </div>
               </div>
 
-              {/* Social Channels */}
               <div className="grid grid-cols-2 gap-2">
                 <a
                   href={PERSONAL_INFO.github}
@@ -218,7 +235,6 @@ export const ContactTerminal: React.FC<ContactTerminalProps> = ({ onApplyCheatCo
             </div>
           </div>
 
-          {/* Secret Easter Egg Terminal */}
           <div className="pixel-card p-5 bg-[#1E120B] text-white shadow-[4px_4px_0px_#3C2A21]">
             <div className="flex items-center justify-between border-b border-[#3C2A21] pb-2 mb-3">
               <span className="font-pixel text-[10px] text-[#E0A96D] flex items-center gap-1.5">
@@ -256,9 +272,7 @@ export const ContactTerminal: React.FC<ContactTerminalProps> = ({ onApplyCheatCo
               </button>
             </form>
           </div>
-
         </div>
-
       </div>
     </section>
   );

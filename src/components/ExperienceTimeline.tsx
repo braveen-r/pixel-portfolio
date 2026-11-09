@@ -16,7 +16,7 @@ export const ExperienceTimeline: React.FC = () => {
             WORK EXPERIENCE &amp; EXP LOG
           </h2>
           <p className="font-silkscreen text-xs text-[#8B5E3C]">
-            [CAREER MILESTONES • COMMERCIAL MERN CLIENT PROJECTS &amp; GUILDS]
+            [CAREER MILESTONES • COMMERCIAL CLOUD AUTOMATION & LINUX ENVIRONMENTS CLIENT PROJECTS &amp; GUILDS]
           </p>
         </div>
       </div>
@@ -48,7 +48,7 @@ export const ExperienceTimeline: React.FC = () => {
                     {exp.rankBadge}
                   </span>
                   <div className="font-silkscreen text-[11px] text-[#8B5E3C] font-semibold mt-1">
-                    {exp.guild} • {exp.location}
+                    {exp.guild} {exp.location}
                   </div>
                 </div>
               </div>

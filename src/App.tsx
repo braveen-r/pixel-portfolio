@@ -16,6 +16,7 @@ import { ProjectsQuestLog } from './components/ProjectsQuestLog';
 import { ExperienceTimeline } from './components/ExperienceTimeline';
 import { ContactTerminal } from './components/ContactTerminal';
 import { Footer } from './components/Footer';
+import { QuoteSection } from './components/QuoteSection';
 
 export default function App() {
   // Mini-Game State
@@ -26,6 +27,9 @@ export default function App() {
   const [speedMultiplier, setSpeedMultiplier] = useState<number>(1.0);
   const [isMuted, setIsMuted] = useState<boolean>(sound.getIsMuted());
   const [manualDirectionRequest, setManualDirectionRequest] = useState<Point | null>(null);
+  
+  // State for God Mode cheat
+  const [isGodMode, setIsGodMode] = useState<boolean>(false);
 
   const handleScoreUpdate = useCallback((newScore: number, newHighScore: number) => {
     setScore(newScore);
@@ -52,13 +56,15 @@ export default function App() {
     }
   };
 
-  // Secret cheat codes
+  // Secret cheat codes updated!
   const handleApplyCheatCode = (code: string) => {
     if (code === 'SPEED') {
       setSpeedMultiplier(2.0);
     } else if (code === 'GOLD' || code === 'COIN') {
-      setScore(prev => prev + 500);
-      setHighScore(prev => Math.max(prev, score + 500));
+      setScore((prev: number) => prev + 500);
+      setHighScore((prev: number) => Math.max(prev, score + 500));
+    } else if (code === 'GODMODE') {
+      setIsGodMode(true);
     }
   };
 
@@ -74,6 +80,7 @@ export default function App() {
         speedMultiplier={speedMultiplier}
         manualDirectionRequest={manualDirectionRequest}
         onClearDirectionRequest={handleClearDirectionRequest}
+        isGodMode={isGodMode} 
       />
 
       {/* 2. Subtle Retro CRT Scanline Texture */}
@@ -108,11 +115,14 @@ export default function App() {
           <ExperienceTimeline />
 
           <ContactTerminal onApplyCheatCode={handleApplyCheatCode} />
+          
+          <QuoteSection />
         </main>
 
         {/* Footer */}
         <Footer score={score} highScore={highScore} />
-      </div>
+        
+      </div> {/* <--- THIS CLOSING DIV WAS MISSING! */}
 
       {/* 4. Floating Retro Game HUD & Mobile D-Pad */}
       <GameHUD

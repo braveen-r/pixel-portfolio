@@ -64,23 +64,23 @@ export const AboutSection: React.FC = () => {
             <div className="p-3 bg-[#EFE3C8]/80 border-2 border-[#8B5E3C] space-y-2 text-xs font-mono mb-5">
               <div className="flex justify-between border-b border-[#D0B8A8] pb-1">
                 <span className="font-bold text-[#8B5E3C]">Current Role:</span>
-                <span className="text-[#3C2A21] font-semibold">Full Stack Developer @ Luzidcraft Business Solutions LLP</span>
+                <span className="text-[#3C2A21] font-semibold">BCA Student &amp; Frontend Developer</span>
               </div>
               <div className="flex justify-between border-b border-[#D0B8A8] pb-1">
                 <span className="font-bold text-[#8B5E3C]">Core Stack:</span>
-                <span className="text-[#3C2A21] font-semibold">MERN (MongoDB, Express, React, Node.js) + Nest.js &amp; Socket.IO</span>
-              </div>
-              <div className="flex justify-between border-b border-[#D0B8A8] pb-1">
-                <span className="font-bold text-[#8B5E3C]">Training Guild:</span>
-                <span className="text-[#3C2A21] font-semibold">LevelX Learning LLP (Full Stack MERN)</span>
+                <span className="text-[#3C2A21] font-semibold">React, Python, Tailwind, Docker, Arch Linux</span>
               </div>
               <div className="flex justify-between border-b border-[#D0B8A8] pb-1">
                 <span className="font-bold text-[#8B5E3C]">Education Quest:</span>
-                <span className="text-[#3C2A21] font-semibold">MBA in Marketing (IGNOU, Ongoing)</span>
+                <span className="text-[#3C2A21] font-semibold">Final Year BCA (Ongoing)</span>
+              </div>
+              <div className="flex justify-between border-b border-[#D0B8A8] pb-1">
+                <span className="font-bold text-[#8B5E3C]">Specialty:</span>
+                <span className="text-[#3C2A21] font-semibold">System Ricing &amp; Cloud Automation</span>
               </div>
               <div className="flex justify-between">
                 <span className="font-bold text-[#8B5E3C]">Status:</span>
-                <span className="text-[#708238] font-bold">READY FOR SCALABLE WEB QUESTS</span>
+                <span className="text-[#708238] font-bold">ACTIVELY SEEKING INTERNSHIPS</span>
               </div>
             </div>
 
@@ -92,19 +92,19 @@ export const AboutSection: React.FC = () => {
               <div className="grid grid-cols-2 gap-2 text-[11px] font-silkscreen">
                 <div className="p-2.5 bg-[#EFE3C8]/85 border border-[#3C2A21]">
                   <div className="text-[#8B5E3C] text-[9px]">PRIMARY WEAPON</div>
-                  <div className="font-bold text-[#3C2A21]">React + TypeScript + Redux</div>
+                  <div className="font-bold text-[#3C2A21]">React + Tailwind CSS</div>
                 </div>
                 <div className="p-2.5 bg-[#EFE3C8]/85 border border-[#3C2A21]">
-                  <div className="text-[#8B5E3C] text-[9px]">BACKEND SORCERY</div>
-                  <div className="font-bold text-[#3C2A21]">Node.js + Express + Nest.js</div>
+                  <div className="text-[#8B5E3C] text-[9px]">BACKEND &amp; LOGIC</div>
+                  <div className="font-bold text-[#3C2A21]">Python + REST APIs</div>
                 </div>
                 <div className="p-2.5 bg-[#EFE3C8]/85 border border-[#3C2A21]">
-                  <div className="text-[#8B5E3C] text-[9px]">REAL-TIME VAULT</div>
-                  <div className="font-bold text-[#3C2A21]">Socket.IO + ZEGOCLOUD</div>
+                  <div className="text-[#8B5E3C] text-[9px]">DEVOPS &amp; CLOUD</div>
+                  <div className="font-bold text-[#3C2A21]">Docker + GitHub Actions</div>
                 </div>
                 <div className="p-2.5 bg-[#EFE3C8]/85 border border-[#3C2A21]">
-                  <div className="text-[#8B5E3C] text-[9px]">CLOUD &amp; DATABASE</div>
-                  <div className="font-bold text-[#3C2A21]">MongoDB + AWS + Docker</div>
+                  <div className="text-[#8B5E3C] text-[9px]">SYSTEM RIG</div>
+                  <div className="font-bold text-[#3C2A21]">Arch Linux + Shell</div>
                 </div>
               </div>
             </div>
@@ -160,7 +160,7 @@ export const AboutSection: React.FC = () => {
                     CRAFTING DIGITAL EXPERIENCES
                   </h4>
                   <p className="font-retro text-lg text-[#3C2A21] leading-relaxed">
-                    &ldquo;Specialized in building scalable and modern web applications with clean architecture and real-time functionality. Transforming complex ideas into efficient and user-friendly digital products.&rdquo;
+                    &ldquo;Specialized in building fast, interactive web applications and heavily customized system environments. Passionate about automated DevOps workflows, writing clean code, and pushing the limits of frontend design.&rdquo;
                   </p>
                 </div>
               </div>
