@@ -61,34 +61,32 @@ export const AboutSection: React.FC = () => {
             </div>
 
             {/* Guild & Specs Table */}
-            <div className="border-2 border-[#8B5E3C] p-3 sm:p-5 bg-[#EFE3C8] font-mono text-[10px] sm:text-xs">
-  
-  <div className="grid grid-cols-[115px_1fr] sm:grid-cols-[140px_1fr] gap-2 border-b border-[#8B5E3C]/30 pb-2 mb-2">
-    <span className="text-[#A67B5B] font-bold">Current Role:</span>
-    <span className="text-[#3C2A21] font-bold">BCA Student & Frontend Developer</span>
-  </div>
-  
-  <div className="grid grid-cols-[115px_1fr] sm:grid-cols-[140px_1fr] gap-2 border-b border-[#8B5E3C]/30 pb-2 mb-2">
-    <span className="text-[#A67B5B] font-bold">Core Stack:</span>
-    <span className="text-[#3C2A21]">React, Python, Tailwind, Docker, Arch Linux</span>
-  </div>
-  
-  <div className="grid grid-cols-[115px_1fr] sm:grid-cols-[140px_1fr] gap-2 border-b border-[#8B5E3C]/30 pb-2 mb-2">
-    <span className="text-[#A67B5B] font-bold">Education Quest:</span>
-    <span className="text-[#3C2A21]">Final Year BCA (Ongoing)</span>
-  </div>
-  
-  <div className="grid grid-cols-[115px_1fr] sm:grid-cols-[140px_1fr] gap-2 border-b border-[#8B5E3C]/30 pb-2 mb-2">
-    <span className="text-[#A67B5B] font-bold">Specialty:</span>
-    <span className="text-[#3C2A21]">System Ricing & Cloud Automation</span>
-  </div>
-  
-  <div className="grid grid-cols-[115px_1fr] sm:grid-cols-[140px_1fr] gap-2 pt-1">
-    <span className="text-[#A67B5B] font-bold">Status:</span>
-    <span className="text-[#708238] font-bold uppercase">ACTIVELY SEEKING INTERNSHIPS</span>
-  </div>
+            <div className="pixel-card p-4 sm:p-6 bg-[#EFE3C8]/95 border-2 border-[#3C2A21] shadow-[4px_4px_0px_#3C2A21]">
+  <div className="space-y-3 sm:space-y-4">
+    
+    {[
+      { label: 'Current Role:', value: 'BCA Student & Frontend Developer' },
+      { label: 'Core Stack:', value: 'React, Python, Tailwind, Docker, Arch Linux' },
+      { label: 'Education Quest:', value: 'Final Year BCA (Ongoing)' },
+      { label: 'Specialty:', value: 'System Ricing & Cloud Automation' },
+    ].map((stat, i) => (
+      <div key={i} className="grid grid-cols-[105px_1fr] sm:grid-cols-[140px_1fr] gap-2 sm:gap-3 items-start border-b border-[#3C2A21]/20 pb-2 sm:pb-3">
+        <span className="font-pixel text-[8px] sm:text-[10px] text-[#8B5E3C] mt-1">{stat.label}</span>
+        <span className="font-pixel text-[9px] sm:text-[11px] text-[#3C2A21] leading-relaxed">{stat.value}</span>
+      </div>
+    ))}
 
+    {/* Status Row */}
+    <div className="grid grid-cols-[105px_1fr] sm:grid-cols-[140px_1fr] gap-2 sm:gap-3 items-start pt-1">
+      <span className="font-pixel text-[8px] sm:text-[10px] text-[#8B5E3C] mt-1">Status:</span>
+      <span className="font-pixel text-[9px] sm:text-[11px] text-[#708238] animate-pulse leading-relaxed tracking-wider">
+        ACTIVELY SEEKING INTERNSHIPS
+      </span>
+    </div>
+
+  </div>
 </div>
+<br />
 
             {/* Equipment / Loadout */}
             <div>
