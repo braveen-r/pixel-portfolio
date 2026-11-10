@@ -237,16 +237,16 @@ export const ContactTerminal: React.FC<ContactTerminalProps> = ({ onApplyCheatCo
 
           <div className="pixel-card p-5 bg-[#1E120B] text-white shadow-[4px_4px_0px_#3C2A21]">
             <div className="flex items-center justify-between border-b border-[#3C2A21] pb-2 mb-3">
-              <span className="font-pixel text-[10px] text-[#E0A96D] flex items-center gap-1.5">
-                <Terminal className="w-3.5 h-3.5 text-[#708238]" /> SECRET CHEAT CONSOLE
+              <span className="font-pixel text-[10px] text-[#3C2A21] flex items-center gap-1.5">
+                <Terminal className="w-3.5 h-3.5 text-[#8B5E3C]" /> SECRET CHEAT CONSOLE
               </span>
               <span className="font-silkscreen text-[9px] text-[#8BA848]">
                 v1.0.4
               </span>
             </div>
 
-            <p className="font-mono text-xs text-[#DFD3C3]/80 mb-2">
-              Try typing <span className="text-[#E0A96D]">SPEED</span>, <span className="text-[#E0A96D]">GOLD</span>, or <span className="text-[#E0A96D]">GODMODE</span> below:
+            <p className="font-mono text-xs text-[#3C2A21] mb-2">
+              Try typing <span className="text-[#8B5E3C]">SPEED</span>, <span className="text-[#8B5E3C]">GOLD</span>, or <span className="text-[#8B5E3C]">GODMODE</span> below:
             </p>
 
             {cheatFeedback && (
