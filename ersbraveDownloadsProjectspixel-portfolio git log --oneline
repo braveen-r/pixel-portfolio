@@ -1,0 +1,15 @@
+[33me92b7cb[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Fix text-2xl overflow in About and Experience components
+[33m0a81e38[m Fix mobile alignment and font styling in About section
+[33md6168c2[m Fix mobile grid alignment in AboutSection
+[33m6055ed9[m Initial commit: Cyber Wizard Portfolio complete
+[33m3eb0287[m Clean up README by removing initial sections
+[33mbad610c[m feat: implement pixel-themed skill inventory system and layout components
+[33m2c43ad7[m feat: implement portfolio components including PixelProfileAvatar, ProjectsQuestLog, SkillsArsenal, and GameHUD with supporting data and audio utilities.
+[33mb87e5e6[m feat: implement modular components, game HUD, and audio utilities for pixel-themed portfolio
+[33m999998b[m feat: implement pixel-themed portfolio components, game HUD, and Web Audio API synthesizer
+[33m6c3ac36[m feat: implement game HUD and core interactive components for retro-themed portfolio site
+[33mc244040[m feat: implement core portfolio components with pixel-art aesthetic and interactive inventory system
+[33mced4a1d[m feat: implement retro-themed portfolio components including project quest logs, interactive games, and terminal interfaces
+[33m4a9e8b6[m feat: initialize 8-bit portfolio project with retro UI components, snake game background, and Web Audio synthesizer
+[33m5981ccf[m feat: implement pixel-themed interactive portfolio with integrated snake game and custom HUD components
+[33m1488fa4[m first commit
