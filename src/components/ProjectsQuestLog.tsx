@@ -85,7 +85,7 @@ export const ProjectsQuestLog = () => {
     {
       id: 11,
       title: "Focus Ledger",
-      description: "",
+      description: "An open-source FinOps platform for cloud cost reconciliation. Validates billing data, quarantines errors, and detects anomalies using FastAPI, DuckDB, and React.",
       tech: ["JavaScript", "CSS", "HTML", "Python", "Dockerfile"],
       link: "https://github.com/braveen-r/focus-ledger",
       status: "COMPLETED"
