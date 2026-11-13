@@ -1,10 +1,13 @@
 export const PERSONAL_INFO = {
   name: "Braveen",
   fullName: "Braveen R",
-  username: "Sunraku",
+  username: "Sunraku", // Awesome Shangri-La Frontier reference!
   email: "braveenrprogrammer811@gmail.com",
   github: "https://github.com/braveen-r",
-  linkedin: "https://www.linkedin.com/in/braveen-r-86a890301/",
+  linkedin: "https://www.linkedin.com/in/braveen-r/",
+  twitter: "https://x.com/braveenruban",
+  instagram: "https://www.instagram.com/braveen_r",
+  discord: "https://discord.com/users/1368852275992334377",
   role: "Frontend Developer",
   title: "Frontend & Cloud Automator",
   headline: "BUILDING INTERACTIVE WEB APPS & SYSTEM ENVIRONMENTS",

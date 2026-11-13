@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { sound } from '../utils/audio';
 import {
-  Mail, Send, Terminal, Copy, Check, Github, Linkedin, MessageSquare,
+  Mail, Send, Terminal, Copy, Check, Github, Linkedin, MessageSquare, Twitter, Instagram
 } from 'lucide-react';
 
 interface ContactTerminalProps {
@@ -40,7 +40,7 @@ export const ContactTerminal: React.FC<ContactTerminalProps> = ({ onApplyCheatCo
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "1ad46911-8cf5-4c87-94ca-762eb65a0827", // <-- PASTE YOUR KEY HERE
+          access_key: "1ad46911-8cf5-4c87-94ca-762eb65a0827", 
           subject: `New Quest Log from ${formData.name} via Portfolio`,
           from_name: formData.name,
           email: formData.email,
@@ -189,6 +189,7 @@ export const ContactTerminal: React.FC<ContactTerminalProps> = ({ onApplyCheatCo
             </div>
 
             <div className="space-y-3">
+              {/* Official Email Inbox */}
               <div className="p-3 bg-[#F7EFE5] border-2 border-[#3C2A21]">
                 <div className="font-pixel text-[9px] text-[#8B5E3C] mb-1">
                   OFFICIAL EMAIL INBOX:
@@ -209,15 +210,16 @@ export const ContactTerminal: React.FC<ContactTerminalProps> = ({ onApplyCheatCo
                 </div>
               </div>
 
+              {/* Social Links 2-Column Grid */}
               <div className="grid grid-cols-2 gap-2">
                 <a
                   href={PERSONAL_INFO.github}
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => sound.playClick()}
-                  className="p-2.5 bg-[#DFD3C3] hover:bg-[#D0B8A8] border-2 border-[#3C2A21] flex items-center gap-2 font-pixel text-[10px] text-[#1E120B]"
+                  className="p-2.5 bg-[#DFD3C3] hover:bg-[#D0B8A8] border-2 border-[#3C2A21] flex items-center justify-center gap-2 font-pixel text-[10px] text-[#1E120B] transition-colors"
                 >
-                  <Github className="w-4 h-4" />
+                  <Github className="w-4 h-4 text-[#3C2A21]" />
                   GITHUB
                 </a>
 
@@ -226,10 +228,50 @@ export const ContactTerminal: React.FC<ContactTerminalProps> = ({ onApplyCheatCo
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => sound.playClick()}
-                  className="p-2.5 bg-[#DFD3C3] hover:bg-[#D0B8A8] border-2 border-[#3C2A21] flex items-center gap-2 font-pixel text-[10px] text-[#1E120B]"
+                  className="p-2.5 bg-[#DFD3C3] hover:bg-[#D0B8A8] border-2 border-[#3C2A21] flex items-center justify-center gap-2 font-pixel text-[10px] text-[#1E120B] transition-colors"
                 >
                   <Linkedin className="w-4 h-4 text-[#8B5E3C]" />
                   LINKEDIN
+                </a>
+
+                <a
+                  href={PERSONAL_INFO.twitter}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => sound.playClick()}
+                  className="p-2.5 bg-[#DFD3C3] hover:bg-[#D0B8A8] border-2 border-[#3C2A21] flex items-center justify-center gap-2 font-pixel text-[10px] text-[#1E120B] transition-colors"
+                >
+                  <Twitter className="w-4 h-4 text-[#3C2A21]" />
+                  TWITTER
+                </a>
+
+                <a
+                  href={PERSONAL_INFO.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => sound.playClick()}
+                  className="p-2.5 bg-[#DFD3C3] hover:bg-[#D0B8A8] border-2 border-[#3C2A21] flex items-center justify-center gap-2 font-pixel text-[10px] text-[#1E120B] transition-colors"
+                >
+                  <Instagram className="w-4 h-4 text-[#A04747]" />
+                  INSTAGRAM
+                </a>
+
+                {/* Discord Full Width */}
+                <a
+                  href={PERSONAL_INFO.discord}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => sound.playClick()}
+                  className="col-span-2 p-2.5 bg-[#DFD3C3] hover:bg-[#D0B8A8] border-2 border-[#3C2A21] flex items-center justify-center gap-2 font-pixel text-[10px] text-[#1E120B] transition-colors"
+                >
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    viewBox="0 0 24 24" 
+                    className="w-4 h-4 fill-current text-[#708238]"
+                  >
+                    <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/>
+                  </svg>
+                  DISCORD
                 </a>
               </div>
             </div>
