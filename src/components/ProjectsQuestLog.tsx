@@ -12,10 +12,10 @@ export const ProjectsQuestLog = () => {
   const projects = [
     {
       id: 1,
-      title: "React Cyberpunk Portfolio",
-      description: "A highly interactive, glassmorphism-based developer portfolio featuring dynamic theming and 3D interactions.",
+      title: "Pixel Portfolio",
+      description: "An interactive, 8-bit retro developer portfolio built with React, TypeScript, and Tailwind CSS. Features a playable background Snake game, RPG-style UI mechanics, and a functional contact terminal.",
       tech: ["React", "Styled Components", "Vercel"],
-      link: "https://github.com/braveen-r",
+      link: "#",
       status: "COMPLETED",
       categories: ["FRONTEND"]
     },
@@ -57,6 +57,15 @@ export const ProjectsQuestLog = () => {
     },
     {
       id: 6,
+      title: "CI Parity",
+      description: "One command to find out why your code passes locally but fails in CI.",
+      tech: ["Python", "Docker", "Shell"],
+      link: "https://github.com/braveen-r/ci-parity",
+      status: "COMPLETED",
+      categories: ["DEVOPS / SRE", "LINUX"]
+    },
+    {
+      id: 7,
       title: "Archlings",
       description: "A Rustlings-inspired Arch Linux troubleshooting trainer providing sandboxed, Docker-based labs for practicing system repairs with telemetry.",
       tech: ["Python", "Shell", "Docker"],
@@ -65,7 +74,7 @@ export const ProjectsQuestLog = () => {
       categories: ["LINUX", "DEVOPS / SRE"]
     },
     {
-      id: 7,
+      id: 8,
       title: "Chaos-Stack",
       description: "A local Chaos Engineering CLI and SRE Observability Control Plane built to intentionally break Docker and emulated AWS infrastructure to validate system resilience.",
       tech: ["Python", "AWS", "Docker"],
@@ -74,7 +83,7 @@ export const ProjectsQuestLog = () => {
       categories: ["DEVOPS / SRE"]
     },
     {
-      id: 8,
+      id: 9,
       title: "Restore-Drill",
       description: "An automated SRE disaster recovery engine that extracts backup snapshots, measures RTO/RPO SLAs, executes integrity smoke tests, and dispatches dynamic runbooks via Discord.",
       tech: ["JavaScript", "Python", "Shell"],
@@ -83,7 +92,7 @@ export const ProjectsQuestLog = () => {
       categories: ["DEVOPS / SRE"]
     },
     {
-      id: 9,
+      id: 10,
       title: "Build-Pulse Analytics",
       description: "A zero-cost, serverless DevOps observability platform that extracts real-time CI/CD pipeline metrics from GitHub Actions and visualizes them on a React dashboard.",
       tech: ["JavaScript", "CSS", "HTML"],
@@ -92,16 +101,34 @@ export const ProjectsQuestLog = () => {
       categories: ["DEVOPS / SRE", "FRONTEND"]
     },
     {
-      id: 10,
+      id: 11,
       title: "CyberNerd",
       description: "A dual-purpose IoT security and honeypot project combining an ESP32-C3 sensor node (gas, motion, door, OLED, and ThingSpeak telemetry) with a multi-port Python TCP honeypot that logs suspicious probes to JSON.",
       tech: ["C++", "Python", "ESP32-C3"],
-      link: "",
-      status: "IN PROGRESS",
+      link: "https://github.com/braveen-r/cybernerd",
+      status: "COMPLETED",
       categories: ["SECURITY"]
     },
     {
-      id: 11,
+      id: 12,
+      title: "Deadline Map",
+      description: "Dependency-aware infrastructure deadline and blast-radius mapper. Tracks TLS certs, domains, tokens, trials, and runtime EOLs with service impact graphs, DuckDB history, Prometheus metrics, and zero-code multi-channel alerts.",
+      tech: ["Java Script", "Python", "HTML", "CSS"],
+      link: "https://github.com/braveen-r/deadline-map",
+      status: "IN PROGRESS",
+      categories: ["DEVOPS / SRE", "FRONTEND"]
+    },
+    {
+      id: 13,
+      title: "Focus Ledger",
+      description: "An open-source FinOps platform for cloud cost reconciliation. Validates billing data, quarantines errors, and detects anomalies using FastAPI, DuckDB, and React.",
+      tech: ["Java Script", "Python", "HTML", "CSS", "SHELL", "DockerFile"],
+      link: "https://github.com/braveen-r/focus-ledger",
+      status: "IN PROGRESS",
+      categories: ["DEVOPS / SRE", "FRONTEND"]
+    },
+    {
+      id: 14,
       title: "UNKNOWN ARTIFACT",
       description: "A classified side-quest currently hidden in the shadows. Gathering resources and planning system architecture...",
       tech: ["???", "Soon"],

@@ -135,10 +135,13 @@ export const Hero: React.FC<HeroProps> = ({ gameMode, onModeChange, onNavigate }
               <PixelProfileAvatar size="lg" />
             </div>
 
-            <div className="font-silkscreen text-[10px] text-[#3C2A21] mb-3 flex items-center justify-center gap-1.5 px-3 py-1 bg-[#EFE3C8]/90 border-2 border-[#8B5E3C]">
-              <span className="w-2 h-2 rounded-full bg-[#708238] animate-ping" />
-              <span>ACTIVELY SEEKING INTERNSHIPS</span>
-            </div>
+            <div className="font-silkscreen font-bold text-[11px] text-[#E0A96D] mb-3 flex items-center justify-center gap-2 px-3.5 py-1.5 bg-[#1E120B] border-2 border-[#8B5E3C] shadow-[2px_2px_0px_#3C2A21]">
+  <span className="relative flex h-2.5 w-2.5 shrink-0">
+    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#708238] opacity-75" />
+    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#708238]" />
+  </span>
+  <span className="tracking-wide">ACTIVELY SEEKING INTERNSHIPS</span>
+</div>
 
             <button
               id="hero-play-snake-btn"
