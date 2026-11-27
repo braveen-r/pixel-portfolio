@@ -13,6 +13,7 @@ import {
   Terminal,
   MapPin,
   Flame,
+  FileDown,
 } from 'lucide-react';
 
 const useTypingText = (words: string[], typingSpeed = 100, deletingSpeed = 60, delayBeforeDelete = 1500) => {
@@ -27,8 +28,8 @@ const useTypingText = (words: string[], typingSpeed = 100, deletingSpeed = 60, d
       const i = loopNum % words.length;
       const fullText = words[i];
 
-      setText(isDeleting 
-        ? fullText.substring(0, text.length - 1) 
+      setText(isDeleting
+        ? fullText.substring(0, text.length - 1)
         : fullText.substring(0, text.length + 1)
       );
 
@@ -39,7 +40,7 @@ const useTypingText = (words: string[], typingSpeed = 100, deletingSpeed = 60, d
       } else if (isDeleting && text === '') {
         setIsDeleting(false);
         setLoopNum(loopNum + 1);
-        setTypingDelay(500); 
+        setTypingDelay(500);
       }
     };
 
@@ -51,8 +52,8 @@ const useTypingText = (words: string[], typingSpeed = 100, deletingSpeed = 60, d
 };
 
 const TITLES = [
-  "FRONTEND DEVELOPER", 
-  "SYSTEM RICER", 
+  "FRONTEND DEVELOPER",
+  "SYSTEM RICER",
   "CLOUD AUTOMATOR",
   "BCA STUDENT",
   "LINUX ENTHUSIAST",
@@ -67,7 +68,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ gameMode, onModeChange, onNavigate }) => {
   const [dialogText, setDialogText] = useState('');
-  
+
   const typingText = useTypingText(TITLES);
   const fullText = `Greetings! I'm ${PERSONAL_INFO.fullName} — a Frontend Developer & Cloud Automator. I build fast, interactive web applications and heavily customized system environments.`;
 
@@ -92,7 +93,7 @@ export const Hero: React.FC<HeroProps> = ({ gameMode, onModeChange, onNavigate }
 
   return (
     <section id="hero" className="relative pt-6 pb-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      
+
       {/* Top RPG Player Stat HUD Ribbon */}
       <div className="pixel-card-subtle mb-6 p-2 sm:p-3 flex flex-wrap items-center justify-between gap-3 text-xs">
         <div className="flex items-center gap-4 flex-wrap">
@@ -127,7 +128,7 @@ export const Hero: React.FC<HeroProps> = ({ gameMode, onModeChange, onNavigate }
       {/* Hero Main Translucent Card */}
       <div className="pixel-card p-6 sm:p-8 md:p-10 shadow-[6px_6px_0px_#3C2A21]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
+
           {/* Left Column: Pixel Avatar & Profile Controls */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center text-center">
             <div className="mb-4">
@@ -151,7 +152,7 @@ export const Hero: React.FC<HeroProps> = ({ gameMode, onModeChange, onNavigate }
 
           {/* Right Column: Title, Dialogue, Tech Stack & CTAs */}
           <div className="lg:col-span-7 space-y-4">
-            
+
             {/* Role & Headline */}
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EFE3C8]/90 border-2 border-[#8B5E3C] font-silkscreen text-[11px] text-[#8B5E3C] mb-2">
@@ -160,12 +161,12 @@ export const Hero: React.FC<HeroProps> = ({ gameMode, onModeChange, onNavigate }
               </div>
 
               <h1 className="font-pixel text-2xl sm:text-3xl lg:text-4xl text-[#1E120B] leading-snug tracking-tight mb-3">
-                HI, I'M <span className="text-[#A67B5B]">{PERSONAL_INFO.name.toUpperCase()}</span>
+                HI, I&apos;M <span className="text-[#A67B5B]">{PERSONAL_INFO.name.toUpperCase()}</span>
               </h1>
 
               {/* UPGRADED MOBILE-RESPONSIVE: Linux Terminal Window */}
               <div className="w-full max-w-md bg-[#110A06] border-2 border-[#3C2A21] mb-4 shadow-[4px_4px_0px_#3C2A21] overflow-hidden group">
-                
+
                 {/* Window Title Bar */}
                 <div className="bg-[#3C2A21] px-2 py-1 flex items-center justify-between border-b-2 border-[#1E120B]">
                   <div className="flex items-center gap-1.5 opacity-80 min-w-0 pr-2">
@@ -184,7 +185,7 @@ export const Hero: React.FC<HeroProps> = ({ gameMode, onModeChange, onNavigate }
                 {/* Terminal Body with Flex-Wrap for perfect mobile multi-line behavior */}
                 <div className="px-3 py-3 sm:py-2.5 relative min-h-[44px] flex items-center">
                   <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:100%_4px] pointer-events-none"></div>
-                  
+
                   <div className="font-silkscreen text-[11px] sm:text-sm font-semibold w-full z-10 relative flex flex-wrap items-center gap-y-1">
                     {/* Prompt Prefix */}
                     <div className="flex items-center shrink-0 mr-2">
@@ -277,7 +278,7 @@ export const Hero: React.FC<HeroProps> = ({ gameMode, onModeChange, onNavigate }
                 className="pixel-btn pixel-btn-gold flex items-center gap-2"
               >
                 <Mail className="w-4 h-4" />
-                LET'S WORK TOGETHER
+                LET&apos;S WORK TOGETHER
               </button>
 
               <button
@@ -291,6 +292,17 @@ export const Hero: React.FC<HeroProps> = ({ gameMode, onModeChange, onNavigate }
                 <Terminal className="w-4 h-4" />
                 SKILLS &amp; ARSENAL
               </button>
+
+              <a
+                id="hero-download-cv-btn"
+                href="/CV.pdf"
+                download="Braveen_R_CV.pdf"
+                onClick={() => sound.playClick()}
+                className="pixel-btn pixel-btn-green flex items-center gap-2"
+              >
+                <FileDown className="w-4 h-4" />
+                LOOT: CV.PDF
+              </a>
             </div>
 
           </div>

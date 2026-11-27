@@ -17,6 +17,8 @@ import { ExperienceTimeline } from './components/ExperienceTimeline';
 import { ContactTerminal } from './components/ContactTerminal';
 import { Footer } from './components/Footer';
 import { QuoteSection } from './components/QuoteSection';
+import { GitHubActivity } from './components/GitHubActivity';
+import { NeofetchSpecs } from './components/NeofetchSpecs';
 
 export default function App() {
   // Mini-Game State
@@ -108,9 +110,13 @@ export default function App() {
 
           <AboutSection />
 
+          <NeofetchSpecs />
+
           <SkillsArsenal />
 
           <ProjectsQuestLog />
+
+          <GitHubActivity />
 
           <ExperienceTimeline />
 
