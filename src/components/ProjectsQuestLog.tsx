@@ -93,12 +93,12 @@ export const ProjectsQuestLog = () => {
     },
     {
       id: 10,
-      title: "IoT Data Interface",
-      description: "A real-time dashboard visualizing hardware sensor metrics, bridging physical data with a responsive web-based interface.",
-      tech: ["JavaScript", "WebSockets", "Node.js"],
+      title: "CyberNerd",
+      description: "A dual-purpose IoT security and honeypot project combining an ESP32-C3 sensor node (gas, motion, door, OLED, and ThingSpeak telemetry) with a multi-port Python TCP honeypot that logs suspicious probes to JSON.",
+      tech: ["C++", "Python", "ESP32-C3"],
       link: "",
       status: "IN PROGRESS",
-      categories: ["FRONTEND"]
+      categories: ["SECURITY"]
     },
     {
       id: 11,
