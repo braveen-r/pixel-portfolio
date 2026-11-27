@@ -163,35 +163,41 @@ export const Hero: React.FC<HeroProps> = ({ gameMode, onModeChange, onNavigate }
                 HI, I'M <span className="text-[#A67B5B]">{PERSONAL_INFO.name.toUpperCase()}</span>
               </h1>
 
-              {/* UPGRADED CREATIVE: Fixed-height Mini Linux Terminal Window */}
+              {/* UPGRADED MOBILE-RESPONSIVE: Linux Terminal Window */}
               <div className="w-full max-w-md bg-[#110A06] border-2 border-[#3C2A21] mb-4 shadow-[4px_4px_0px_#3C2A21] overflow-hidden group">
                 
                 {/* Window Title Bar */}
                 <div className="bg-[#3C2A21] px-2 py-1 flex items-center justify-between border-b-2 border-[#1E120B]">
-                  <div className="flex items-center gap-1.5 opacity-80">
-                    <Terminal className="w-3 h-3 text-[#EFE3C8]" />
-                    <span className="font-pixel text-[8px] text-[#EFE3C8] tracking-wider mt-0.5">tty1 - braveen@arch</span>
+                  <div className="flex items-center gap-1.5 opacity-80 min-w-0 pr-2">
+                    <Terminal className="w-3 h-3 text-[#EFE3C8] shrink-0" />
+                    <span className="font-pixel text-[8px] sm:text-[9px] text-[#EFE3C8] tracking-wider mt-0.5 truncate">
+                      tty1 - braveen@arch
+                    </span>
                   </div>
-                  <div className="flex gap-1.5">
+                  <div className="flex gap-1.5 shrink-0">
                     <div className="w-2 h-2 bg-[#A04747] border border-[#1E120B]"></div>
                     <div className="w-2 h-2 bg-[#E0A96D] border border-[#1E120B]"></div>
                     <div className="w-2 h-2 bg-[#708238] border border-[#1E120B]"></div>
                   </div>
                 </div>
 
-                {/* Terminal Body with Anti-Bounce Lock */}
-                <div className="px-3 relative h-[40px] flex items-center">
-                  {/* Subtle CRT Scanline Overlay */}
+                {/* Terminal Body with Flex-Wrap for perfect mobile multi-line behavior */}
+                <div className="px-3 py-3 sm:py-2.5 relative min-h-[44px] flex items-center">
                   <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:100%_4px] pointer-events-none"></div>
                   
-                  {/* Forced single line with whitespace-nowrap and overflow-hidden */}
-                  <p className="font-silkscreen text-xs sm:text-sm font-semibold flex items-center w-full whitespace-nowrap overflow-hidden z-10 relative">
-                    <span className="text-[#708238] mr-1 shrink-0">root@braveen</span>
-                    <span className="text-[#EFE3C8] mr-1 opacity-70 shrink-0">:</span>
-                    <span className="text-[#4A90E2] mr-2 shrink-0">~#</span>
-                    <span className="text-[#E0A96D] drop-shadow-[0_0_2px_rgba(224,169,109,0.8)]">{typingText}</span>
-                    <span className="inline-block w-2.5 h-[14px] bg-[#A04747] ml-1 animate-pixel-blink shadow-[0_0_5px_#A04747] shrink-0" />
-                  </p>
+                  <div className="font-silkscreen text-[11px] sm:text-sm font-semibold w-full z-10 relative flex flex-wrap items-center gap-y-1">
+                    {/* Prompt Prefix */}
+                    <div className="flex items-center shrink-0 mr-2">
+                      <span className="text-[#708238]">root@braveen</span>
+                      <span className="text-[#EFE3C8] opacity-70 mx-1">:</span>
+                      <span className="text-[#4A90E2]">~#</span>
+                    </div>
+                    {/* Dynamic Typing Text */}
+                    <div className="flex items-center shrink-0">
+                      <span className="text-[#E0A96D] drop-shadow-[0_0_2px_rgba(224,169,109,0.8)]">{typingText}</span>
+                      <span className="inline-block w-2 sm:w-2.5 h-[12px] sm:h-[14px] bg-[#A04747] ml-1.5 animate-pixel-blink shadow-[0_0_5px_#A04747]" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -227,20 +233,24 @@ export const Hero: React.FC<HeroProps> = ({ gameMode, onModeChange, onNavigate }
             {/* Quick Stat Tags */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
               <div className="p-2 bg-[#EFE3C8]/85 border-2 border-[#8B5E3C] text-center">
-                <div className="font-pixel text-base text-[#A04747]">{PERSONAL_INFO.experienceYears} YR</div>
-                <div className="font-silkscreen text-[9px] text-[#3C2A21]">DEV EXP</div>
+                {/* Darker Crimson */}
+                <div className="font-pixel text-base text-[#8B3A3A]">{PERSONAL_INFO.experienceYears} YR</div>
+                <div className="font-silkscreen font-bold text-[9px] text-[#1E120B]">DEV EXP</div>
               </div>
               <div className="p-2 bg-[#EFE3C8]/85 border-2 border-[#8B5E3C] text-center">
-                <div className="font-pixel text-base text-[#708238]">11+</div>
-                <div className="font-silkscreen text-[9px] text-[#3C2A21]">ACTIVE REPOS</div>
+                {/* Darker Forest Green */}
+                <div className="font-pixel text-base text-[#596B26]">11+</div>
+                <div className="font-silkscreen font-bold text-[9px] text-[#1E120B]">ACTIVE REPOS</div>
               </div>
               <div className="p-2 bg-[#EFE3C8]/85 border-2 border-[#8B5E3C] text-center">
-                <div className="font-pixel text-base text-[#E0A96D]">100%</div>
-                <div className="font-silkscreen text-[9px] text-[#3C2A21]">SYSTEM RICING</div>
+                {/* Darker Bronze */}
+                <div className="font-pixel text-base text-[#C27A2F]">100%</div>
+                <div className="font-silkscreen font-bold text-[9px] text-[#1E120B]">SYSTEM RICING</div>
               </div>
               <div className="p-2 bg-[#EFE3C8]/85 border-2 border-[#8B5E3C] text-center">
-                <div className="font-pixel text-base text-[#8B5E3C]">BLAZING</div>
-                <div className="font-silkscreen text-[9px] text-[#3C2A21]">ARCH LINUX ENV</div>
+                {/* Darker Mocha Brown */}
+                <div className="font-pixel text-base text-[#6B4527]">BLAZING</div>
+                <div className="font-silkscreen font-bold text-[9px] text-[#1E120B]">ARCH LINUX ENV</div>
               </div>
             </div>
 
